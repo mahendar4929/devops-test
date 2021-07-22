@@ -39,7 +39,7 @@ pipeline {
         stage ('Windows Update') {
             steps {
                   sh '''
-                  ansible-playbook -i inv /var/lib/jenkins/ansible/playbook.yaml --extra-vars "ansible_user=${username} ansible_password=${password} ansible_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore"
+                  ansible-playbook -i inv ansible/playbook.yaml --extra-vars "ansible_user=${username} ansible_password=${password} ansible_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore"
                   '''
             }
         }
